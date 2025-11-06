@@ -23,15 +23,19 @@ function App() {
           element: <Dashboard />
         },
         {
-          path: 'application',
+          path: 'applications',
           element: <Application />
         },
         {
-          path: 'notification',
+          path: 'notifications',
           element: <Notification />
         },
         {
-          path: 'setting',
+          path: 'settings',
+          element: <Setting />
+        },
+        {
+          path: 'profile',
           element: <Setting />
         },
       ]
@@ -41,7 +45,7 @@ function App() {
       element: <GuestLayout />,
       children: [
         {
-          path: '/',
+          index: true,
           element: <Home />
         },
         {

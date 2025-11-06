@@ -1,6 +1,7 @@
 import { Header } from "./Header";
 import { Sidebar } from "./Sidebar";
 import { Footer } from "./Footer";
+
 import { Outlet } from "react-router-dom";
 
 const AdminLayout: React.FC = () => {
@@ -8,7 +9,9 @@ const AdminLayout: React.FC = () => {
         <>
             <Header />
             <Sidebar />
-            <Outlet />
+            <div className="ml-64 pt-24 p-10">
+                <Outlet />
+            </div>
             <Footer />
         </>
     )
