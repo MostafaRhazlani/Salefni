@@ -1,15 +1,20 @@
-import { Header } from "./Header";
 import { Sidebar } from "./Sidebar";
 import { Footer } from "./Footer";
+import { useAuth } from "../../hooks/useAuth";
 
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
 const AdminLayout: React.FC = () => {
+    const isAuthenticated: boolean = useAuth();
+
+    if(!isAuthenticated) {
+        return <Navigate to="/login" replace />
+    }
+    
     return (
         <>
-            <Header />
             <Sidebar />
-            <div className="ml-64 pt-24 p-10">
+            <div className="ml-64 p-10">
                 <Outlet />
             </div>
             <Footer />
